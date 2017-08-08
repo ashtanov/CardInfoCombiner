@@ -151,7 +151,7 @@ namespace CardInfoCombiner
             _cardsReadyCount.CardReadyProperty = _fullFilled.Count;
             Task.Run(() =>
             {
-                using (StreamWriter sw = new StreamWriter($"{DateTime.Now.ToString("CARDS_dd_MM_yy_HH_mm_ss")}_{processedCards.Count}.csv"))
+                using (StreamWriter sw = new StreamWriter($"CARDS_{DateTime.Now.ToString("dd_MM_yy_HH_mm_ss")}_{processedCards.Count}.csv"))
                 {
                     foreach (var id in processedCards)
                     {
