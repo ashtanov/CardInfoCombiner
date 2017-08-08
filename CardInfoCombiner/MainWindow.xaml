@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardInfoCombiner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="320.589" Width="843.627">
+    <Grid Margin="0,0,2,-21">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="293*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="178"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" x:Name="label" Content="Текущая папка:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="currentFolderTB" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding CurrentFolder.CFProperty}" VerticalAlignment="Stretch" Width="573" Height="25" />
+            <Button x:Name="selectFolderButton" Content="Изменить" HorizontalAlignment="Right" VerticalAlignment="Stretch" Click="selectFolderButton_Click"/>
+        </StackPanel>
+        <Label Grid.Row="1" x:Name="label_Copy" Content="Обработано карт:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="149" Height="26" />
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="cardsReadyTB" IsReadOnly="True" HorizontalAlignment="Center" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="22"/>
+        <Button x:Name="button1" Content="Создать отчет" HorizontalAlignment="Center" VerticalAlignment="Center" Width="173" Height="69" Grid.Column="1" Grid.Row="2" Click="generateReportButton_Click"/>
     </Grid>
 </Window>
